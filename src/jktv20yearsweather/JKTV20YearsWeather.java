@@ -48,13 +48,15 @@ public class JKTV20YearsWeather {
             }
             //Добавляем в строку месяца ячейки дней
             yearsWeather[i] = new int[dayInMonth];
-    
+            float sum = 0.0f;
             System.out.printf("%11s: ", Month.values()[i]);
             for (int j = 0; j < yearsWeather[i].length; j++){
-               //Инициируем 
+               //Инициируем дни температурой согласно сезона и выводим их в консоль
                 yearsWeather[i][j] = random.nextInt(max - min +1) + min;
+                sum += yearsWeather[i][j];
                 System.out.printf("%4d",yearsWeather[i][j]);
             }
+            System.out.printf(" | %2.2f",sum/dayInMonth);
             System.out.println();
         }
       
